@@ -35,7 +35,7 @@ export default function Hero() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/home"
-                className="rounded-md transition-colors bg-[#6A994E] px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                className="rounded-md transition-colors bg-[#6A994E] hover:bg-[#386641] px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 Смотреть каталог
               </Link>

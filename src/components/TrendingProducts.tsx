@@ -18,7 +18,7 @@ export default function TrendingProducts() {
           <h2 id="favorites-heading" className="text-2xl font-bold tracking-tight text-gray-900">
             Популярные товары
           </h2>
-          <a href="#" className="hidden text-sm font-medium text-green-700 hover:text-indigo-500 md:block">
+          <a href="#" className="hidden text-sm font-medium text-green-700 hover:text-[#386641] md:block">
             Смотреть все
             <span aria-hidden="true"> &rarr;</span>
           </a>
