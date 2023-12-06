@@ -10,7 +10,7 @@ const navigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -23,7 +23,7 @@ const navigation = {
     {
       name: 'YouTube',
       href: '#',
-      icon: (props) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
