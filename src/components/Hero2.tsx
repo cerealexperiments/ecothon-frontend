@@ -2,6 +2,8 @@ import React from "react"
 import heroImage from "../../public/hero2.png"
 import Image from "next/image"
 import Balancer from "react-wrap-balancer"
+import Link from "next/link"
+
 export default function Hero2() {
 return (
     <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
@@ -23,12 +25,12 @@ return (
                 </Balancer>
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <a
-                  href="#"
+                <Link
+                  href="/home/catalogue"
                   className="rounded-md bg-[#6A994E] hover:bg-[#386641] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Смотреть каталог
-                </a>
+                </Link>
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                   Подробнее <span aria-hidden="true">→</span>
                 </a>
