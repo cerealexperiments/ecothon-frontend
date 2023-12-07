@@ -8,20 +8,21 @@ import logo from "../../../public/logo.png"
 import Image from "next/image";
 
 const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
+  name: 'User',
+  email: 'user@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Главная', href: '#', current: true },
-  { name: 'Каталог', href: '#', current: false },
-  { name: 'Заказать', href: '#', current: false },
+  { name: 'На главную', href: '/', current: false },
+  { name: 'Мои заказы', href: '/home', current: false },
+  { name: 'Каталог', href: '/home/catalogue', current: false },
+  { name: 'Заказать', href: '/home/order', current: false },
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Мой профиль', href: '#' },
+  { name: 'Настройки', href: '#' },
+  { name: 'Выйти', href: '#' },
 ]
 
 function classNames(...classes) {
@@ -150,7 +151,7 @@ export default function HomeLayout({children}) {
                 <div className="border-t border-gray-200 pb-3 pt-4">
                   <div className="flex items-center px-4">
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <Image className="h-10 w-10 rounded-full" src={defaultUser} alt="" />
                     </div>
                     <div className="ml-3">
                       <div className="text-base font-medium text-gray-800">{user.name}</div>

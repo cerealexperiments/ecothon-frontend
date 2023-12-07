@@ -7,8 +7,8 @@ import Image from "next/image";
 import logo from "../../public/logo.png";
 
 const navigation = [
-  { name: "Каталог", href: "/statistics" },
-  { name: "Заказать", href: "/services" },
+  { name: "Каталог", href: "/home/catalogue" },
+  { name: "Заказать", href: "/home/order" },
   { name: "О нас", href: "/about" },
 ];
 

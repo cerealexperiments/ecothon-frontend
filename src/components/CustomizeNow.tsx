@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 export default function CustomizeNow() {
   return (
@@ -9,15 +10,15 @@ export default function CustomizeNow() {
           Кастомизируйте свою вещь сейчас.
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-          <a
-            href="#"
+          <Link
+            href="/home/order"
             className="rounded-md bg-[#6A994E]  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#386641] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Начать
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
             Подробнее <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
