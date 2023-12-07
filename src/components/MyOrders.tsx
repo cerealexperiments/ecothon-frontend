@@ -1,9 +1,23 @@
+"use client"
 import React from "react"
+import ky from "ky"
+import { useQuery } from "@tanstack/react-query"
+
+const getUserOrders = async (userId: number) => {
+  const response = await ky.get(`http://localhost:3030/orders?userId=${userId}`).json()
+  console.log(response)
+  return response
+}
 
 
 import { CalendarDaysIcon, CreditCardIcon, UserCircleIcon } from '@heroicons/react/20/solid'
 
 export default function Order() {
+  const ordersQuery = useQuery({
+    queryKey: ["user orders"],
+    queryFn: () => getUserOrders(Number(localStorage.getItem("user_id")) || 0)
+  })
+  console.log(ordersQuery.data)
   return (
     <div className="lg:col-start-3 max-w-md lg:row-end-1">
       <h1 className="text-3xl font-bold leading-tight tracking-tight pb-6 text-gray-900">Мои заказы</h1>

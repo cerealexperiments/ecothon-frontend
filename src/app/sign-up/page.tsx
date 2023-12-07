@@ -9,7 +9,7 @@ const registerUser = async (payload: {
   email: string;
   password: string;
 }) => {
-  const json = await ky.post("http://localhost:3000/auth/registerUser", {
+  const json = await ky.post("http://localhost:3030/auth/registerUser", {
     json: payload,
   }).json();
   console.log(json)
@@ -22,7 +22,7 @@ const registerTailor = async (payload: {
   password: string;
   category?: string;
 }) => {
-  const json = await ky.post("http://localhost:3000/auth/registerTailor", {
+  const json = await ky.post("http://localhost:3030/auth/registerTailor", {
     json: payload,
   }).json();
   console.log(json)
@@ -142,8 +142,8 @@ export default function SignUpPage() {
                 </label>
                 <select
                   id="location"
-                  value={userType}
-                  onChange={(event) => setUserType(event.target.value)}
+                  value={category}
+                  onChange={(event) => setCategory(event.target.value)}
                   name="location"
                   className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
@@ -158,23 +158,31 @@ export default function SignUpPage() {
                 type="submit"
                 onClick={async () => {
                   if(userType === "user") {
-                    const response = await registerUser({
-                      name,
-                      email,
-                      password
-                    })
-                    if(response) {
-                      router.push("/sign-in")
+                    try {
+                      const response = await registerUser({
+                        name,
+                        email,
+                        password
+                      })
+                      if(response) {
+                        router.push("/sign-in")
+                      }
+                    } catch(error) {
+                      console.log(error)
                     }
                   } else {
-                    const response = await registerTailor({
-                      name,
-                      email,
-                      password,
-                      category
-                    })
-                    if(response) {
-                      router.push("/sign-in")
+                    try {
+                      const response = await registerTailor({
+                        name,
+                        email,
+                        password,
+                        category
+                      })
+                      if(response) {
+                        router.push("/sign-in")
+                      }
+                    } catch(error) {
+                      console.log(error)
                     }
                   }
                 }}

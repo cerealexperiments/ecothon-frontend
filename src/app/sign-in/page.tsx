@@ -10,7 +10,7 @@ const signIn = async (payload: {
   email: string;
   password: string;
 }) => {
-  const json = await ky.post("http://localhost:3000/auth/login", {
+  const json = await ky.post("http://localhost:3030/auth/login", {
     json: payload,
   }).json();
   console.log(json)
@@ -105,19 +105,23 @@ export default function SignIn() {
               <button
                 type="submit"
                 onClick={async () => {
-                  const response: any = await signIn({
-                    userType,
-                    email,
-                    password
-                  })
-                  if(response) {
-                    console.log(response.user)
-                    const {user} = response;
-                    localStorage.setItem("name", user.name);
-                    localStorage.setItem("profile_picture", user.profile_picture);
-                    localStorage.setItem("user_id", user.id);
-                    localStorage.setItem("email", user.email)
-                    router.push("/home")
+                  try {
+                    const response: any = await signIn({
+                      userType,
+                      email,
+                      password
+                    })
+                    if(response) {
+                      console.log(response.user)
+                      const {user} = response;
+                      localStorage.setItem("name", user.name);
+                      localStorage.setItem("profile_picture", user.profile_picture);
+                      localStorage.setItem("user_id", user.id);
+                      localStorage.setItem("email", user.email)
+                      router.push("/home")
+                    }
+                  } catch(error) {
+                    console.log(error)
                   }
                 }}
                 className="flex w-full justify-center rounded-md bg-[#6A994E] hover:bg-[#386641] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
