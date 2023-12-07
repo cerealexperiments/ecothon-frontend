@@ -1,13 +1,25 @@
 const trendingProducts = [
   {
-    id: 1,
-    name: 'Футболка ???',
-    color: 'Хлопок',
-    price: '500 сом',
+    id: 3,
+    name: 'Футболка',
     href: '#',
-    imageSrc: 'https://www.mrporter.com/variants/images/3633577411310824/in/w2000_q60.jpg',
-    imageAlt: 'Hand stitched, orange leather long wallet.',
+    price: '1000 c.',
+    description: 'Cочетание современных и традиционных элементов.',
+    color: 'Бежевый',
+    imageSrc: 'https://www.tradeinn.com/f/13742/137429620/replay-w3302.000.22832p-crew-neck-short-sleeve-t-shirt.jpg',
+    imageAlt: 'https://frankfurt.apollo.olxcdn.com/v1/files/53tz40pvrwhs1-KZ/image;s=1000x700',
   },
+  {
+    id: 4,
+    name: 'Платье',
+    href: '#',
+    price: '3400 c.',
+    description: 'Платье средней длины, изготовленное из легкого материала.',
+    color: 'Синий',
+    imageSrc: 'https://frankfurt.apollo.olxcdn.com/v1/files/53tz40pvrwhs1-KZ/image;s=1000x700',
+    imageAlt: 'ion care anymore',
+  },
+  // More products...
 ]
 
 export default function TrendingProducts() {
@@ -31,7 +43,7 @@ export default function TrendingProducts() {
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-cover brightness-[90%] object-center"
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">
