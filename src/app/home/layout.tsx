@@ -29,7 +29,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function HomeLayout({children}) {
+export default function HomeLayout({children}: any) {
   return (
     <>
       <div className="min-h-full">
