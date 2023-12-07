@@ -39,7 +39,7 @@ export default function Order() {
               <span className="sr-only">Client</span>
               <UserCircleIcon className="h-6 w-5 text-gray-400" aria-hidden="true" />
             </dt>
-            <dd className="text-sm font-medium leading-6 text-gray-900">Швея 1</dd>
+            <dd className="text-sm font-medium leading-6 text-gray-900">Кастомайзер</dd>
           </div>
           <div className="mt-4 flex w-full flex-none gap-x-4 px-6">
             <dt className="flex-none">
